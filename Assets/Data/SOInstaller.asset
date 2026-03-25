@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49a683978369e6a40ad2bdfd305b265e, type: 3}
-  m_Name: CubeSOInstaller
+  m_Name: SOInstaller
   m_EditorClassIdentifier: 
-  <List>k__BackingField: {fileID: 11400000, guid: 66bae41af89965f4c8d3fcd4491ae1dd, type: 2}
+  <CubeList>k__BackingField: {fileID: 11400000, guid: 66bae41af89965f4c8d3fcd4491ae1dd, type: 2}
+  <ActionList>k__BackingField: {fileID: 11400000, guid: 07b1f0addda8e654b8103f11bcb23105, type: 2}

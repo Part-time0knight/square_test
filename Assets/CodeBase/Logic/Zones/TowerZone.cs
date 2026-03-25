@@ -26,7 +26,7 @@ namespace Logic.Zones
             _zoneRect = zoneTransform;
             _canvas = canvas;
             _dragService = dragAndDropService;
-            _animationHelper = new AnimationHelper();
+            _animationHelper = new();
         }
 
         public override void Initialize()
@@ -45,7 +45,7 @@ namespace Logic.Zones
 
         public override void Set(Cube cube)
         {
-            
+            base.Set(cube);
             cube.transform.SetParent(_zoneRect);
             if (_cubes.Count == 0)
             {

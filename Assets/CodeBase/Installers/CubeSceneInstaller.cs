@@ -58,6 +58,12 @@ namespace Installers
                 .NonLazy();
 
             Container
+                .BindInterfacesAndSelfTo<TopBorderZone>()
+                .AsSingle()
+                .WithArguments(_settings.Zones.TopBorderRect, _settings.Zones.DragCanvas)
+                .NonLazy();
+
+            Container
                 .BindInterfacesAndSelfTo<HoleZone>()
                 .AsSingle()
                 .WithArguments(_settings.Zones.HoleRect,
@@ -104,6 +110,9 @@ namespace Installers
 
                 [field: SerializeField]
                 public Canvas DragCanvas { get; private set; }
+
+                [field: SerializeField]
+                public RectTransform TopBorderRect { get; private set; }
 
                 [field: SerializeField]
                 public RectTransform HoleRect { get; private set; }

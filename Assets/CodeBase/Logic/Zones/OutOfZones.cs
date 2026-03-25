@@ -6,6 +6,8 @@ namespace Logic.Zones
 {
     public class OutOfZones : IZone, IInitializable
     {
+        public event Action OnSet;
+
         private CubeManager _cubeManager;
         protected ZoneChecker _checker;
         private AnimationHelper _animationHelper;
@@ -15,7 +17,7 @@ namespace Logic.Zones
         { 
             _cubeManager = cubeManager;
             _checker = checker;
-            _animationHelper = new AnimationHelper();
+            _animationHelper = new();
         }
 
         public void Initialize()
@@ -31,6 +33,7 @@ namespace Logic.Zones
         {
             Action callback = () => _cubeManager.Remove(cube);
             _animationHelper.Destroy(cube, callback);
+            OnSet?.Invoke();
         }
     }
 }

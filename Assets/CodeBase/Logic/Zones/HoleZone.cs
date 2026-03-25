@@ -26,7 +26,7 @@ namespace Logic.Zones
             _holePanel = holePanel;
             _canvas = canvas;
             _imageRect = imageTransform;
-            _animationHelper = new AnimationHelper();
+            _animationHelper = new();
             _cubeManager = cubeManager;
         }
 
@@ -50,6 +50,7 @@ namespace Logic.Zones
 
         public override void Set(Cube cube)
         {
+            base.Set(cube);
             cube.transform.SetParent(_holePanel);
             if (!CheckCollisionToImage(cube))
             {
