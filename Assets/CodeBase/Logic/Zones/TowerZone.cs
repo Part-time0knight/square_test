@@ -63,7 +63,12 @@ namespace Logic.Zones
 
             if (_cubes.Count == 0) return;
             Cube last = _cubes.Last();
-            _topPos = new(_bottomPos.x, last.Position.y - last.Size.y);
+            if (_cubes.Count == index)
+            {
+                _topPos = new(_bottomPos.x, last.Position.y);
+                return;
+            }
+            
             for (int i = index; i < _cubes.Count; i++)
             {
                 _animationHelper.Down(_cubes[i],
